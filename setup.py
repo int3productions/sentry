@@ -108,6 +108,7 @@ install_requires = [
     # broken on python3
     'hiredis>=0.1.0,<0.2.0',
     'honcho>=0.7.0,<0.8.0',
+    'pyjwt>=0.3.2',
     'kombu==3.0.35',
     'lxml>=3.4.1',
 

@@ -39,6 +39,8 @@ from sentry.web.frontend.group_event_json import GroupEventJsonView
 from sentry.web.frontend.group_plugin_action import GroupPluginActionView
 from sentry.web.frontend.group_tag_export import GroupTagExportView
 from sentry.web.frontend.home import HomeView
+from sentry.web.frontend.jira_ui_widget import JiraConfigView, JiraUIWidgetView, \
+    JiraInstalledCallback
 from sentry.web.frontend.mailgun_inbound_webhook import \
     MailgunInboundWebhookView
 from sentry.web.frontend.organization_api_key_settings import \
@@ -320,6 +322,10 @@ urlpatterns += patterns(
     url(r'^api/new-token/$', react_page_view),
 
     url(r'^out/$', OutView.as_view()),
+
+    url(r'^jira-ui-plugin/$', JiraUIWidgetView.as_view()),
+    url(r'^atlassian-connect\.json$', JiraConfigView.as_view()),
+    url(r'^jira-installed-callback$', JiraInstalledCallback.as_view()),
 
     # Organizations
     url(r'^(?P<organization_slug>[\w_-]+)/$', react_page_view,
