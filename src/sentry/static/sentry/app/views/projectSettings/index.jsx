@@ -87,10 +87,10 @@ const ProjectSettings = React.createClass({
           <ul className="nav nav-stacked">
             <li><a href={`${settingsUrlRoot}/`}>{t('General')}</a></li>
             <li><a href={`${settingsUrlRoot}/notifications/`}>{t('Notifications')}</a></li>
+            <ListLink to={`/${orgId}/${projectId}/settings/alerts/`}>{t('Alerts')}</ListLink>
             {features.has('quotas') &&
               <li><a href={`${settingsUrlRoot}/quotas/`}>{t('Rate Limits')}</a></li>
             }
-            <li><a href={`${settingsUrlRoot}/rules/`}>{t('Rules')}</a></li>
             <li><a href={`${settingsUrlRoot}/tags/`}>{t('Tags')}</a></li>
             <li><a href={`${settingsUrlRoot}/issue-tracking/`}>{t('Issue Tracking')}</a></li>
             <li><a href={`${settingsUrlRoot}/release-tracking/`}>{t('Release Tracking')}</a></li>
